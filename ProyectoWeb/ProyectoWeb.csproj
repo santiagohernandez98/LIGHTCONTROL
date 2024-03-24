@@ -1839,6 +1839,7 @@
     <Content Include="Content\Plugins\sweetalert2\js\sweetalert.js" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Imagenes\logo.jpg" />
     <Content Include="Imagenes\logovoto.png" />
     <Content Include="Imagenes\votacion.jpg" />
     <Content Include="Imagenes\votar.jpg" />
