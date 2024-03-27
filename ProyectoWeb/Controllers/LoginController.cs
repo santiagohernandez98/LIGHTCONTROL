@@ -21,7 +21,7 @@ namespace ProyectoWeb.Controllers
         [HttpPost]
         public ActionResult Index(string correo, string clave)
         {
-            Usuario ObjUsuario = CD_Usuario.ObtenerUsuarios().Where(x => x.Correo == correo && x.Clave ==  Encriptacion.GetSHA256(clave) ).FirstOrDefault();
+            Usuario ObjUsuario = CD_Usuario.ObtenerUsuarios().Where(x => x.Correo == correo && x.Clave == (clave) ).FirstOrDefault();
 
             if (ObjUsuario == null)
             {
