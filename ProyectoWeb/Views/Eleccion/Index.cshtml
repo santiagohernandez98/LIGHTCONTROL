@@ -17,38 +17,99 @@
 
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-        <li class="breadcrumb-item" aria-current="page">Elecciones</li>
+        <li class="breadcrumb-item text-center" aria-current="page">
+            <div class="row justify-content-center">
+                <div class="col-auto">
+                    PQRS
+                </div>
+            </div>
+        </li>
     </ol>
 </nav>
 
 <div class="row">
-    <div class="col-sm-12">
+   
+    <div class="col-sm-6">
+
+        <!-- DATOS GENERALES -->
         <div class="card border-dark">
             <div class="card-header text-white bg-dark">
-                <h5 class="float-left">Lista de Elecciones</h5>
-                <button class="btn btn-success btn-sm float-right" onclick="abrirPopUpForm(null)">
-                    <i class="fa fa-plus" aria-hidden="true"></i> Agregar Nuevo
-                </button>
+                <h5 class="float-left">Datos Generales </h5>
+              
+
             </div>
             <div class="card-body">
-                <table id="tbdata" class="table table-striped table-bordered" style="width:100%">
+                <!-- Table for Section 1 data -->
+                <table id="tbdata_section1" class="table table-striped table-bordered" style="width:100%">
                     <thead>
                         <tr>
-                            <th>Descripcion</th>
-                            <th>Cargo</th>
-                            <th>Fecha Registrado</th>
-                            <th>Estado</th>
-                            <th>Creado Por</th>
-                            <th></th>
+                            <th>Fecha Registro</th>
+                            <th>Canal</th>
+                            <th>Tipo PQRS</th>
+                            <th>Referencia</th>
                         </tr>
                     </thead>
                     <tbody></tbody>
                 </table>
             </div>
-
         </div>
-
     </div>
+
+    <div class="col-sm-6">
+        <!-- DATOS DEL USUARIO -->
+        <div class="card border-dark">
+            <div class="card-header text-white bg-dark">
+                <h5 class="float-left">Datos del Usuario</h5>
+            </div>
+            <div class="card-body">
+                <!-- Table for Section 2 data -->
+                <table id="tbdata_section2" class="table table-striped table-bordered" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>Documento</th>
+                            <th>Nombre</th>
+                            <th>Telefono</th>
+                            <th>Correo Electronico</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-6">
+        <!-- DATOS DE AFECTACIÓN -->
+        <div class="card border-dark">
+            <div class="card-header text-white bg-dark">
+                <h5 class="float-left">Datos Afectación </h5>
+               
+            </div>
+            <div class="card-body">
+                <!-- Table for Section 3 data -->
+                <table id="tbdata_section3" class="table table-striped table-bordered" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>Descripcion Afectacion</th>
+                            <th>Tipo Alumbrado</th>
+                            <th>Estado</th>
+                            <th>Observaciones</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+<div>
+    <button class="btn btn-success btn-sm float-right" onclick="abrirPopUpForm(null)">
+        <i class="fa fa-plus" aria-hidden="true"></i> Nueva Petición
+    </button>
 </div>
 
 
@@ -66,35 +127,103 @@
                 <input id="txtid" type="hidden" value="0" />
 
                 <form id="formNivel">
+                    <!-- Add more rows for other variables -->
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="form-group">
-                                <label for="txtdescripcion">Descripcion <span class="error"></span></label>
-                                <input type="text" class="form-control required" id="txtdescripcion" name="descripcion" autocomplete="9%%###5&&%$">
+                                <label for="fecha_registro">Fecha de Registro</label>
+                                <input type="date" class="form-control" id="fecha_registro" name="fecha_registro">
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="form-group">
-                                <label for="txtcargo">Cargo <span class="error"></span></label>
-                                <input type="text" class="form-control required" id="txtcargo" name="cargo" autocomplete="9%%94351134&&6">
+                                <label for="canal">Canal</label>
+                                <input type="text" class="form-control" id="canal" name="canal">
                             </div>
                         </div>
                     </div>
-
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="form-group">
-                                <label for="cboEstado">Estado</label>
-                                <select id="cboEstado" class="form-control">
-                                    <option value="1">Activo</option>
-                                    <option value="0">No Activo</option>
-                                </select>
+                                <label for="tipo_pqrs">Tipo PQRS</label>
+                                <input type="text" class="form-control" id="tipo_pqrs" name="tipo_pqrs">
                             </div>
                         </div>
                     </div>
-
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="referencia">Referencia</label>
+                                <input type="text" class="form-control" id="referencia" name="referencia">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="documento">Documento</label>
+                                <input type="text" class="form-control" id="documento" name="documento">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="nombre">Nombre</label>
+                                <input type="text" class="form-control" id="nombre" name="nombre">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="telefono">Telefono</label>
+                                <input type="text" class="form-control" id="telefono" name="telefono">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="correo_electronico">Correo Electronico</label>
+                                <input type="email" class="form-control" id="correo_electronico" name="correo_electronico">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="descripcion_afectacion">Descripcion Afectacion</label>
+                                <textarea class="form-control" id="descripcion_afectacion" name="descripcion_afectacion" rows="3"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="tipo_alumbrado">Tipo Alumbrado</label>
+                                <input type="text" class="form-control" id="tipo_alumbrado" name="tipo_alumbrado">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="estado">Estado</label>
+                                <input type="text" class="form-control" id="estado" name="estado">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="observaciones">Observaciones</label>
+                                <textarea class="form-control" id="observaciones" name="observaciones" rows="3"></textarea>
+                            </div>
+                        </div>
+                    </div>
                 </form>
 
             </div>
