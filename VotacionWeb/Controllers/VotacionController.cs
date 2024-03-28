@@ -41,16 +41,16 @@ namespace VotacionWeb.Controllers
         public JsonResult ObtenerElecciones() {
 
             List<Votante> votantes = CD_Votante.Obtener().Where(v => v.DocumentoIdentidad == SesionVotante.DocumentoIdentidad).ToList();
-            List<Eleccion> elecciones = CD_Eleccion.Obtener().Where(e => e.Activo == true).ToList();
+            List<PQRS> elecciones = CD_PQRS.Obtener().Where(e => e.Activo == true).ToList();
 
-            List<Eleccion> oLista;
+            List<PQRS> oLista;
   
             if (votantes != null && elecciones != null)
             {
                 oLista = (from v in votantes
                           join e in elecciones on v.oEleccion.IdEleccion equals e.IdEleccion
                           where v.EmitioVotacion == false
-                          select new Eleccion()
+                          select new PQRS()
                           {
                               IdEleccion = e.IdEleccion,
                               Descripcion = e.Descripcion,
@@ -63,7 +63,7 @@ namespace VotacionWeb.Controllers
             }
             else {
 
-                oLista = new List<Eleccion>();
+                oLista = new List<PQRS>();
             }
 
 

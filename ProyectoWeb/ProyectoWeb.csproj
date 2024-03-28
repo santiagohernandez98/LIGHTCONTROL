@@ -141,13 +141,11 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\CandidatoController.cs" />
     <Compile Include="Controllers\DashBoardController.cs" />
-    <Compile Include="Controllers\EleccionController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\PQRSController.cs" />
     <Compile Include="Controllers\ReporteController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
-    <Compile Include="Controllers\VotanteController.cs" />
     <Compile Include="Filters\VerificarSesion.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -2036,7 +2034,7 @@
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Usuario\Index.cshtml" />
-    <Content Include="Views\Eleccion\Index.cshtml" />
+    <Content Include="Views\PQRS\Index.cshtml" />
     <Content Include="Views\Candidato\Index.cshtml" />
     <Content Include="Views\Votante\Index.cshtml" />
     <Content Include="Views\Reporte\Votantes.cshtml" />
@@ -2045,6 +2043,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Pqrsprueba\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

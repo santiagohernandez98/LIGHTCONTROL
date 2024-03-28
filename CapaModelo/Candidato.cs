@@ -14,7 +14,7 @@ namespace CapaModelo
         public string RutaImagen { get; set; }
         public string ImagenBase64 { get; set; }
         public string Extension { get; set; }
-        public Eleccion oEleccion { get; set; }
+        public PQRS oEleccion { get; set; }
         public Usuario oUsuario { get; set; }
         public DateTime FechaRegistro { get; set; }
         public bool Activo { get; set; }

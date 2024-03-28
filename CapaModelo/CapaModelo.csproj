@@ -44,7 +44,7 @@
   <ItemGroup>
     <Compile Include="Candidato.cs" />
     <Compile Include="Configuracion.cs" />
-    <Compile Include="Eleccion.cs" />
+    <Compile Include="PQRS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resultado.cs" />
     <Compile Include="Usuario.cs" />

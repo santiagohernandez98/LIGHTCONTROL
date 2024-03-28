@@ -8,7 +8,7 @@ using System.Threading.Tasks;
   
 namespace CapaModelo
 {
-    public class Eleccion
+    public class PQRS
     {
         public int id { get; set; }
         public DateTime fecha_registro { get; set; }

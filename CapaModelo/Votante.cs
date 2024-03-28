@@ -12,7 +12,7 @@ namespace CapaModelo
         public string DocumentoIdentidad { get; set; }
         public string Nombres { get; set; }
         public string Apellidos { get; set; }
-        public Eleccion oEleccion { get; set; }
+        public PQRS oEleccion { get; set; }
         public Usuario oUsuario { get; set; }
         public bool Activo { get; set; }
         public DateTime FechaRegistro { get; set; }

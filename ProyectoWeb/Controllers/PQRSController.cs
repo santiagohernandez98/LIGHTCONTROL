@@ -8,11 +8,11 @@ using System.Web.Mvc;
 
 namespace ProyectoWeb.Controllers
 {
-    public class EleccionController : Controller
+    public class PQRSController : Controller
     {
         private static Usuario SesionUsuario;
 
-        // GET: Eleccion
+
         public ActionResult Index()
         {
             SesionUsuario = (Usuario)Session["Usuario"];
@@ -22,26 +22,26 @@ namespace ProyectoWeb.Controllers
 
         public JsonResult Obtener()
         {
-            List<Eleccion> olista = CD_Eleccion.Obtener();
+            List<PQRS> olista = CD_PQRS.Obtener();
             return Json(new { data = olista }, JsonRequestBehavior.AllowGet);
         }
 
 
         [HttpPost]
-        public JsonResult Guardar(Eleccion objeto)
+        public JsonResult Guardar(PQRS objeto)
         {
             bool respuesta = false;
 
-            if (objeto.IdEleccion == 0)
+            if (objeto.id == 0)
             {
-                objeto.oUsuario = SesionUsuario;
 
-                respuesta = CD_Eleccion.Registrar(objeto);
+
+                respuesta = CD_PQRS.Registrar(objeto);
             }
-            else
-            {
-                respuesta = CD_Eleccion.Modificar(objeto);
-            }
+            /*    else
+                {
+                    respuesta = CD_PQRS.Modificar(objeto);
+                } */
 
 
             return Json(new { resultado = respuesta }, JsonRequestBehavior.AllowGet);

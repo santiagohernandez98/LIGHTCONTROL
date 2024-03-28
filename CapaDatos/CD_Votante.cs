@@ -36,10 +36,10 @@ namespace CapaDatos
                             Activo = Convert.ToBoolean(dr["Activo"]),
                             EmitioVotacion = Convert.ToBoolean(dr["EmitioVotacion"]),
                             FechaRegistro = Convert.ToDateTime(dr["FechaRegistro"].ToString()),
-                            oEleccion = new Eleccion()
+                         /*   oEleccion = new PQRS()
                             {
                                 IdEleccion = Convert.ToInt32(dr["IdEleccion"].ToString()),
-                            },
+                            }, */
                             oUsuario = new Usuario()
                             {
                                 IdUsuario = Convert.ToInt32(dr["IdUsuario"].ToString()),

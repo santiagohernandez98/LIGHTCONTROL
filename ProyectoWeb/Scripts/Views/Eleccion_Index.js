@@ -94,18 +94,28 @@ function abrirPopUpForm(json) {
 function Guardar() {
 
     if ($("#formNivel").valid()) {
-
         var request = {
             objeto: {
-                IdEleccion: $("#txtid").val(),
-                Descripcion: $("#txtdescripcion").val(),
-                Cargo: $("#txtcargo").val(),
-                Activo: parseInt($("#cboEstado").val()) == 1 ? true : false
+                fecha_registro: new Date($("#fecha_registro").val()),
+                canal: $("#canal").val(),
+                tipo_pqrs: $("#tipo_pqrs").val(),
+                referencia: $("#referencia").val(),
+                documento: $("#documento").val(),
+                nombre: $("#nombre").val(),
+                telefono: $("#telefono").val(),
+                correo_electronico: $("#correo_electronico").val(),
+                descripcion_afectacion: $("#descripcion_afectacion").val(),
+                tipo_alumbrado: $("#tipo_alumbrado").val(),
+                estado: $("#estado").val(),
+                oberservaciones : $("#observaciones").val(),
+
             }
         }
 
+     
+
         jQuery.ajax({
-            url: $.MisUrls.url.Url_GuardarEleccion,
+            url: "/PQRS/Guardar",
             type: "POST",
             data: JSON.stringify(request),
             dataType: "json",

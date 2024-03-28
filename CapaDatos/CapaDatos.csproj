@@ -43,9 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CD_Candidato.cs" />
     <Compile Include="CD_Configuracion.cs" />
-    <Compile Include="CD_Eleccion.cs" />
+    <Compile Include="CD_PQRS.cs" />
     <Compile Include="CD_Usuario.cs" />
     <Compile Include="CD_Votacion.cs" />
     <Compile Include="CD_Votante.cs" />
