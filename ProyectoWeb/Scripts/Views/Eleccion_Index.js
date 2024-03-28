@@ -156,3 +156,5 @@ function ObtenerFormatoFecha(datetime) {
 
     return output;
 }
+
+

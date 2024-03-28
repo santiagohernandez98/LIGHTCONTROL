@@ -22,8 +22,21 @@ namespace ProyectoWeb.Controllers
 
         public JsonResult Obtener()
         {
-            List<PQRS> olista = CD_PQRS.Obtener();
-            return Json(new { data = olista }, JsonRequestBehavior.AllowGet);
+         
+           List<PQRS> olista = CD_PQRS.Obtener();
+            string data = "[";
+            foreach (PQRS o in olista) {
+                data += $@"[""{o.nombre}"",""{o.fecha_registro}"",""{o.tipo_pqrs}"",""{o.descripcion_afectacion}""]";
+               
+            
+            }
+            data += "]"; 
+             
+            
+            
+            
+
+            return Json(new { data }, JsonRequestBehavior.AllowGet);
         }
 
 
